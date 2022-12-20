@@ -1,0 +1,9 @@
+.inputText {
+    height: 25px;
+    width: 300px;
+    border-radius: 5px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: medium;
+    /* display: inline-block; */
+}

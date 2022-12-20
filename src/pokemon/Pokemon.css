@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.loading {
+    text-align: center;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.error {
+    text-align: center;
+    color: red;
+}
+
+.clear {
+    border-radius: 5px;
+    font-family: 'Segoe UI';    
+    font-size: medium;    
+}
+
+.message {
+    color: #6ECCAF;
+    font-size: medium;
+    margin-top: 15px;
+}

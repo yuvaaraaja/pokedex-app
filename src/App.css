@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
+
+.title {
+  text-align: center;
+  color: #FDEFF4;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: bold;  
+  font-size: 35px;
+}
+
+.titleImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 20%;
+  width: 20%;
+}
+
+body {
+  /* background-color: #f4f4f4;  */
+  background: #424242 url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
+}

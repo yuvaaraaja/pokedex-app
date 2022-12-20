@@ -1,0 +1,1 @@
+A Virtual pokedex app that lets you access all details about all the Pokemon
