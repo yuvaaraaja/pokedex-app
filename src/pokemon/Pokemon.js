@@ -7,6 +7,7 @@ import './Pokemon.css';
 export default class Pokemon extends Component {
 
   localPokemonArr = [];
+  pokemonUrlList = [];
   nameFilter = '';  
   typeFilter = '';  
 
@@ -14,8 +15,7 @@ export default class Pokemon extends Component {
       super(props);
       this.state = {
         error: null,
-        isLoaded: false,
-        pokemonUrlList: [],
+        isLoaded: false,        
         pokemonDataList: [],        
         pokemonDataFilteredList: [],
         reset: false
@@ -40,11 +40,12 @@ export default class Pokemon extends Component {
       return fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
       .then(res => res.json())
       .then(
-        (result) => {          
+        (result) => {      
+          this.pokemonUrlList = result.results;
           this.setState({
             isLoaded: true,
             pokemonUrlList: result.results
-          });            
+          });          
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -58,11 +59,12 @@ export default class Pokemon extends Component {
       )
     }
 
-    callPokemonApiForEachPokemon = () => {
-      this.state.pokemonUrlList.map((pokemonUrl, i) => (
+    callPokemonApiForEachPokemon = () => {      
+      this.pokemonUrlList.map((pokemonUrl, i) => (
         fetch(pokemonUrl.url)
         .then(res => res.json())
         .then(res => {
+            console.log(res);
             var types = [];            
             res.types.map(typeObj => types.push(typeObj.type.name));            
             let pokemonObj = { 
@@ -132,7 +134,7 @@ export default class Pokemon extends Component {
         return <div className='loading'>Loading...</div>;
       } 
       else 
-      {
+      {        
         return (        
         <div>
           <div className='input'>
