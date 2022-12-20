@@ -43,8 +43,7 @@ export default class Pokemon extends Component {
         (result) => {      
           this.pokemonUrlList = result.results;
           this.setState({
-            isLoaded: true,
-            pokemonUrlList: result.results
+            isLoaded: true            
           });          
         },
         // Note: it's important to handle errors here
@@ -59,12 +58,13 @@ export default class Pokemon extends Component {
       )
     }
 
-    callPokemonApiForEachPokemon = () => {      
+    callPokemonApiForEachPokemon = () => {
+      //console.log(this.pokemonUrlList.length);      
       this.pokemonUrlList.map((pokemonUrl, i) => (
         fetch(pokemonUrl.url)
         .then(res => res.json())
         .then(res => {
-            console.log(res);
+            //console.log(res);
             var types = [];            
             res.types.map(typeObj => types.push(typeObj.type.name));            
             let pokemonObj = { 
